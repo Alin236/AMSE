@@ -1,10 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="17af6283-6717-4dae-a6dc-0e3dc0f1d8c7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/AMSE.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/AMSE.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tp1/images/Teste.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tp1/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/tp1/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tp1/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/tp1/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,9 +43,14 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="settings.editor.selected.configurable" value="flutter.settings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\nilav\OneDrive\Bureau\Applications mobiles et systemes embarques\Dev Web Mobile\AMSE\tp1\images" />
+    </key>
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
@@ -60,6 +84,17 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
     <state x="301" y="89" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1643636699325">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -73,10 +108,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="AVDManager/0.0.1920.1040@0.0.1920.1040" timestamp="1643636593267" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1643646684838">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1643794377079">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1643646684838" />
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1643794377079" />
+    <state width="1877" height="223" key="GridCell.Tab.0.bottom" timestamp="1643794379097">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="223" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1643794379097" />
+    <state width="1877" height="223" key="GridCell.Tab.0.center" timestamp="1643794379097">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="223" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1643794379097" />
+    <state width="1877" height="223" key="GridCell.Tab.0.left" timestamp="1643794379097">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="223" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1643794379097" />
+    <state width="1877" height="223" key="GridCell.Tab.0.right" timestamp="1643794379097">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="223" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1643794379097" />
     <state x="461" y="165" key="SettingsEditor" timestamp="1643646692460">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

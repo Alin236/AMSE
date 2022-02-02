@@ -11,9 +11,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Gestion de média',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
       home: NavBar(),
     );
   }
@@ -56,7 +53,7 @@ class _NavBarState extends State<NavBar> {
       body: Center(
         child: Container(
           child: _pageOptions.elementAt(_selectedPage),
-          margin: EdgeInsets.all(32),
+          margin: marge,
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -98,26 +95,65 @@ final mediaPage = ListView(
     MediaTile(),
     MediaTile(),
     MediaTile(),
+    MediaTile(),
+    MediaTile(),
+    MediaTile(),
+    MediaTile(),
   ],
   padding: const EdgeInsets.symmetric(horizontal: 8),
 );
 
 class MediaTile extends StatelessWidget{
   const MediaTile({Key? key}) : super(key: key);
+  static const String title = "Title";
+  static const String info = "info";
+  static const String pathImage = "images/Teste.png";
 
   @override
   Widget build(BuildContext context) {
     return Card(
       child: InkWell(
-        splashColor: Colors.blue.withAlpha(30),
+        splashColor: Colors.blue,
         onTap: () {
-          debugPrint('Card tapped.');
+          moreAbout(context);
           },
         child: const ListTile(
-            title: Text('Texta'),
-            leading: Icon(Icons.hourglass_empty),
+            title: Text(title),
+            leading: Image(image: AssetImage(pathImage)),
           ),
       ),
     );
   }
+
+  void moreAbout(BuildContext context) {
+    Navigator.of(context).push(
+      MaterialPageRoute<void>(
+        builder: (context) {
+          return Scaffold(
+            appBar: AppBar(
+              title: const Text("Plus d'information"),
+            ),
+            body: Center(
+              child: Container(
+                child: pageInfo(title, pathImage, info),
+                margin: marge,
+              ),
+            ),
+          );
+        },
+      ),
+    );
+  }
+
+  Widget pageInfo(String title, String pathImage, String info){
+    return Column(
+      children: [
+        Text(title),
+        Image(image: AssetImage(pathImage)),
+        Text(info)
+      ]
+    );
+  }
 }
+
+const EdgeInsets marge = EdgeInsets.all(32);
