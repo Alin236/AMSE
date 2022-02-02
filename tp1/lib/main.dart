@@ -28,14 +28,12 @@ class NavBar extends StatefulWidget {
 
 class _NavBarState extends State<NavBar> {
   int _selectedPage = 0;
-  static const List<Widget> _pageOptions = <Widget>[
-    Text(
-      'Text2',
-    ),
-    Text(
+  final List<Widget> _pageOptions = <Widget>[
+    mediaPage,
+    const Text(
       'Text3',
     ),
-    Text(
+    const Text(
       'Text4',
     ),
     Text(
@@ -56,7 +54,10 @@ class _NavBarState extends State<NavBar> {
         title: const Text('Text1'),
       ),
       body: Center(
-        child: _pageOptions.elementAt(_selectedPage),
+        child: Container(
+          child: _pageOptions.elementAt(_selectedPage),
+          margin: EdgeInsets.all(32),
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
@@ -84,6 +85,38 @@ class _NavBarState extends State<NavBar> {
         currentIndex: _selectedPage,
         selectedItemColor: Colors.black,
         onTap: _onItemTapped,
+      ),
+    );
+  }
+}
+
+final mediaPage = ListView(
+  children: const <Widget> [
+    MediaTile(),
+    MediaTile(),
+    MediaTile(),
+    MediaTile(),
+    MediaTile(),
+    MediaTile(),
+  ],
+  padding: const EdgeInsets.symmetric(horizontal: 8),
+);
+
+class MediaTile extends StatelessWidget{
+  const MediaTile({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      child: InkWell(
+        splashColor: Colors.blue.withAlpha(30),
+        onTap: () {
+          debugPrint('Card tapped.');
+          },
+        child: const ListTile(
+            title: Text('Texta'),
+            leading: Icon(Icons.hourglass_empty),
+          ),
       ),
     );
   }

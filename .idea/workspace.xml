@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17af6283-6717-4dae-a6dc-0e3dc0f1d8c7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/AMSE.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/AMSE.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tp1/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/tp1/lib/main.dart" afterDir="false" />
     </list>
@@ -22,9 +23,29 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="dart.settings" />
+    <property name="settings.editor.selected.configurable" value="flutter.settings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="flutter run" />
+      <command value="run" />
+      <command value="open AMSE" />
+      <command value="open HelloWorld" />
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter" temporary="true" nameIsGenerated="true">
+      <option name="filePath" value="$PROJECT_DIR$/tp1/lib/main.dart" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Flutter.main.dart" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -52,9 +73,21 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="AVDManager/0.0.1920.1040@0.0.1920.1040" timestamp="1643636593267" />
-    <state x="461" y="165" key="SettingsEditor" timestamp="1643635981041">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1643646684838">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1643635981041" />
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1643646684838" />
+    <state x="461" y="165" key="SettingsEditor" timestamp="1643646692460">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1643646692460" />
+    <state x="1136" y="57" width="585" height="801" key="find.popup" timestamp="1643648463702">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1136" y="57" width="585" height="801" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1643648463702" />
+    <state x="524" y="256" width="672" height="677" key="run.anything.popup" timestamp="1643699531048">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="524" y="256" width="672" height="677" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1643699531048" />
   </component>
 </project>
