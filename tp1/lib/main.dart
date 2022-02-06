@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 const EdgeInsets marge = EdgeInsets.all(16);
+final savedList = <MediaTile>[];
 
 void main() {
   runApp(const MyApp());
@@ -30,7 +31,7 @@ class _NavBarState extends State<NavBar> {
   final List<Widget> _pageOptions = <Widget>[
     homePage,
     mediaPage,
-    //favorisPage,
+    favorisPage,
     aboutPage,
   ];
 
@@ -64,13 +65,11 @@ class _NavBarState extends State<NavBar> {
             label: 'Média',
             backgroundColor: Colors.green,
           ),
-          /*
           BottomNavigationBarItem(
             icon: Icon(Icons.favorite),
             label: 'Favoris',
             backgroundColor: Colors.red,
           ),
-          */
           BottomNavigationBarItem(
             icon: Icon(Icons.info),
             label: 'Information',
@@ -176,8 +175,8 @@ const linkedIn = MediaTile(
 
 //------------------------
 
-final mediaPage = ListView(
-  children: const <Widget>[
+var mediaPage = ListView(
+  children: const <MediaTile>[
     undertale,
     oriAndTheBlindForest,
     hollowKnight,
@@ -192,7 +191,7 @@ final mediaPage = ListView(
   padding: const EdgeInsets.symmetric(horizontal: 8),
 );
 
-class MediaTile extends StatelessWidget {
+class MediaTile extends StatefulWidget {
   const MediaTile(
       {Key? key,
       required this.title,
@@ -204,7 +203,13 @@ class MediaTile extends StatelessWidget {
   final String pathImage;
 
   @override
+  State<MediaTile> createState() => _MediaTileState();
+}
+
+class _MediaTileState extends State<MediaTile> {
+  @override
   Widget build(BuildContext context) {
+    bool saved = savedList.contains(widget);
     return Card(
       child: InkWell(
         splashColor: Colors.blue,
@@ -212,8 +217,16 @@ class MediaTile extends StatelessWidget {
           moreAbout(context);
         },
         child: ListTile(
-          title: Text(title),
-          leading: Image(image: AssetImage(pathImage), width: 80),
+          title: Text(widget.title),
+          leading: Image(image: AssetImage(widget.pathImage), width: 80),
+          trailing: IconButton(
+            icon: Icon(saved ? Icons.favorite : Icons.favorite_border),
+            onPressed: () {
+              setState(() {
+                saved ? savedList.remove(widget) : savedList.add(widget);
+              });
+            },
+          ),
         ),
       ),
     );
@@ -231,7 +244,8 @@ class MediaTile extends StatelessWidget {
               child: Container(
                 child: Card(
                   child: Container(
-                    child: pageInfo(title, pathImage, info),
+                    child:
+                        pageInfo(widget.title, widget.pathImage, widget.info),
                     margin: const EdgeInsets.all(4),
                   ),
                 ),
@@ -253,6 +267,13 @@ class MediaTile extends StatelessWidget {
   }
 }
 
+//=================Pour la page favoris========================
+
+var favorisPage = ListView(
+  children: savedList,
+  padding: const EdgeInsets.symmetric(horizontal: 8),
+);
+
 //=================Pour la page d'information==================
 
 final aboutPage = Card(
@@ -262,7 +283,7 @@ final aboutPage = Card(
       children: const [
         Text("AGM", textScaleFactor: 4),
         Text("Créer par : Nilavan DEVA"),
-        Text("Version : 1.0"),
+        Text("Version : 2.0"),
       ],
       mainAxisAlignment: MainAxisAlignment.center,
     ),
