@@ -8,6 +8,7 @@ Cette application contient 4 pages : une page d'accueil, une page de gestion des
 La page de gestion des médias est composé d'une liste de média.
 Chaque média est clickable afin d'ouvrir une page d'information le concernant.
 Chaque média possède une icone favoris clickable pour ajouter ou retirer le média des favoris.
+Les médias sont filtrables en fonction de leur type.
 
 ## Page de favoris
 
