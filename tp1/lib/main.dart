@@ -221,6 +221,7 @@ class _MediaTileState extends State<MediaTile> {
           leading: Image(image: AssetImage(widget.pathImage), width: 80),
           trailing: IconButton(
             icon: Icon(saved ? Icons.favorite : Icons.favorite_border),
+            color: saved ? Colors.red : null,
             onPressed: () {
               setState(() {
                 saved ? savedList.remove(widget) : savedList.add(widget);
@@ -283,7 +284,7 @@ final aboutPage = Card(
       children: const [
         Text("AGM", textScaleFactor: 4),
         Text("Créer par : Nilavan DEVA"),
-        Text("Version : 2.0"),
+        Text("Version : 2.1"),
       ],
       mainAxisAlignment: MainAxisAlignment.center,
     ),
