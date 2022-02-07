@@ -1,16 +1,15 @@
-# tp1
+# TP 1
 
-A new Flutter project.
+Le TP 1 est la réalisation d'une application de gestion de média.
+Cette application contient 4 pages : une page d'accueil, une page de gestion des médias, une page de favoris et une page d'information.
 
-## Getting Started
+## Page gestion des médias
 
-This project is a starting point for a Flutter application.
+La page de gestion des médias est composé d'une liste de média.
+Chaque média est clickable afin d'ouvrir une page d'information le concernant.
+Chaque média possède une icone favoris clickable pour ajouter ou retirer le média des favoris.
 
-A few resources to get you started if this is your first Flutter project:
+## Page de favoris
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+La page de favoris liste les médias ajoutés en favoris.
+Cette page contient les même fonctionnalités que la page gestion des médias.
