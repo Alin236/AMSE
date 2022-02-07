@@ -165,7 +165,7 @@ const youtube = MediaTile(
   title: "Youtube",
   info:
       "YouTube est un site web d’hébergement de vidéos et un média social sur lequel les utilisateurs peuvent envoyer, regarder, commenter, évaluer et partager des vidéos en streaming. Il a été créé en février 2005 par Steve Chen, Chad Hurley et Jawed Karim, trois anciens employés de PayPal, et racheté par Google en octobre 2006 pour 1,65 milliard de dollars.",
-  pathImage: "images/youtube.jpg",
+  pathImage: "images/youtube.png",
 );
 
 const twitter = MediaTile(
