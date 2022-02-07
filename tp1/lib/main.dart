@@ -30,12 +30,13 @@ class NavBar extends StatefulWidget {
 class _NavBarState extends State<NavBar> {
   int _selectedPage = 0;
   final List<Widget> _pageOptions = <Widget>[
-    homePage,
-    mediaPage,
-    favorisPage,
-    aboutPage,
+    homePage, //La page d'accueil
+    mediaPage, //La page de gestion des médias
+    favorisPage, //La page de favoris
+    aboutPage, //La page d'information
   ];
 
+  //Permet de clicker sur la NavBar
   void _onItemTapped(int index) {
     setState(() {
       _selectedPage = index;
@@ -47,6 +48,7 @@ class _NavBarState extends State<NavBar> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('AGM'),
+        //Définition du TabBar pour filtrer les médias
         bottom: [1, 2].contains(_selectedPage)
             ? const TabBar(tabs: [
                 Tab(text: 'Tous'),
@@ -58,6 +60,7 @@ class _NavBarState extends State<NavBar> {
       ),
       body: Center(
         child: Container(
+          //Selon l'item sélectionner dans la NavigationBar, on affiche la bonne page
           child: _pageOptions.elementAt(_selectedPage),
           margin: marge,
         ),
@@ -95,6 +98,7 @@ class _NavBarState extends State<NavBar> {
 
 //=================Pour la page d'accueil=========================
 
+//La page d'accueil
 final homePage = Card(
   child: Container(
     alignment: Alignment.center,
@@ -184,10 +188,13 @@ const linkedIn = MediaTile(
 
 //------------------------
 
+//Liste des médias filtré par leur type
 const jeux = [undertale, oriAndTheBlindForest, hollowKnight];
 const films = [avengersEndgame, spiderManNoWayHome];
 const reseaux = [facebook, discord, youtube, twitter, linkedIn];
 
+//La page de gestion des médias
+//Le TabBarView permet le filtrage des médias
 var mediaPage = TabBarView(children: [
   MediaView(mediaTileList: jeux + films + reseaux),
   const MediaView(mediaTileList: jeux),
@@ -195,6 +202,7 @@ var mediaPage = TabBarView(children: [
   const MediaView(mediaTileList: reseaux),
 ]);
 
+//Class permettant d'afficher une liste de média donné en argument
 class MediaView extends StatelessWidget {
   const MediaView({Key? key, required this.mediaTileList}) : super(key: key);
   final List<MediaTile> mediaTileList;
@@ -209,6 +217,7 @@ class MediaView extends StatelessWidget {
   }
 }
 
+//Class affichant le média
 class MediaTile extends StatefulWidget {
   const MediaTile(
       {Key? key,
@@ -231,17 +240,20 @@ class _MediaTileState extends State<MediaTile> {
     return Card(
       child: InkWell(
         splashColor: Colors.blue,
+        //Permet d'afficher plus d'information sur le média
         onTap: () {
           moreAbout(context);
         },
         child: ListTile(
           title: Text(widget.title),
           leading: Image(image: AssetImage(widget.pathImage), width: 80),
+          //L'IconButton permet d'ajouter ou retirer des médias des favoris
           trailing: IconButton(
             icon: Icon(saved ? Icons.favorite : Icons.favorite_border),
             color: saved ? Colors.red : null,
             onPressed: () {
               setState(() {
+                //Le média est sauvegardé ou retirer de la liste savedList et de l'une des 3 liste permettant le filtre des favoris
                 if (!saved) {
                   savedList.add(widget);
                   jeux.contains(widget) ? savedJeux.add(widget) : null;
@@ -261,6 +273,7 @@ class _MediaTileState extends State<MediaTile> {
     );
   }
 
+  //Permet d'afficher plus d'information sur le média
   void moreAbout(BuildContext context) {
     Navigator.of(context).push(
       MaterialPageRoute<void>(
@@ -298,11 +311,13 @@ class _MediaTileState extends State<MediaTile> {
 
 //=================Pour la page favoris========================
 
+//Ces listes permettent de garder en mémoire les favoris et de les filtrer
 final savedList = <MediaTile>[];
 final savedJeux = <MediaTile>[];
 final savedFilms = <MediaTile>[];
 final savedReseau = <MediaTile>[];
 
+//La page de favoris
 var favorisPage = TabBarView(children: [
   MediaView(mediaTileList: savedList),
   MediaView(mediaTileList: savedJeux),
@@ -312,6 +327,7 @@ var favorisPage = TabBarView(children: [
 
 //=================Pour la page d'information==================
 
+//La page d'information
 final aboutPage = Card(
   child: Container(
     alignment: Alignment.center,
