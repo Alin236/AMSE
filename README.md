@@ -6,4 +6,4 @@ Le TP 1 est la réalisation d'une application de gestion de média.
 
 ## TP 2
 LE TP 2 est la réalisation d'un jeu de Taquin.
-Etant éffectué en binôme, le tp 2 ne se trouve pas dans ce repository mais dans [celui de Maxime BOHRER](https://github.com/maximebohrer/amse)
+Etant éffectué en binôme, le tp 2 ne se trouve pas dans ce repository mais dans [celui de Maxime BOHRER](https://github.com/maximebohrer/amse).
