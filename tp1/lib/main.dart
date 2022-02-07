@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 const EdgeInsets marge = EdgeInsets.all(16);
-final savedList = <MediaTile>[];
 
 void main() {
   runApp(const MyApp());
@@ -13,9 +12,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      title: 'Gestion de média',
-      home: NavBar(),
-    );
+        title: 'Gestion de média',
+        home: DefaultTabController(
+          length: 4,
+          child: NavBar(),
+        ));
   }
 }
 
@@ -46,6 +47,14 @@ class _NavBarState extends State<NavBar> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('AGM'),
+        bottom: [1, 2].contains(_selectedPage)
+            ? const TabBar(tabs: [
+                Tab(text: 'Tous'),
+                Tab(text: 'Jeux'),
+                Tab(text: 'Films'),
+                Tab(text: 'Réseaux'),
+              ])
+            : null,
       ),
       body: Center(
         child: Container(
@@ -175,21 +184,30 @@ const linkedIn = MediaTile(
 
 //------------------------
 
-var mediaPage = ListView(
-  children: const <MediaTile>[
-    undertale,
-    oriAndTheBlindForest,
-    hollowKnight,
-    avengersEndgame,
-    spiderManNoWayHome,
-    facebook,
-    discord,
-    youtube,
-    twitter,
-    linkedIn,
-  ],
-  padding: const EdgeInsets.symmetric(horizontal: 8),
-);
+const jeux = [undertale, oriAndTheBlindForest, hollowKnight];
+const films = [avengersEndgame, spiderManNoWayHome];
+const reseaux = [facebook, discord, youtube, twitter, linkedIn];
+
+var mediaPage = TabBarView(children: [
+  MediaView(mediaTileList: jeux + films + reseaux),
+  const MediaView(mediaTileList: jeux),
+  const MediaView(mediaTileList: films),
+  const MediaView(mediaTileList: reseaux),
+]);
+
+class MediaView extends StatelessWidget {
+  const MediaView({Key? key, required this.mediaTileList}) : super(key: key);
+  final List<MediaTile> mediaTileList;
+  static const padding = EdgeInsets.symmetric(horizontal: 8);
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      children: mediaTileList,
+      padding: padding,
+    );
+  }
+}
 
 class MediaTile extends StatefulWidget {
   const MediaTile(
@@ -224,7 +242,17 @@ class _MediaTileState extends State<MediaTile> {
             color: saved ? Colors.red : null,
             onPressed: () {
               setState(() {
-                saved ? savedList.remove(widget) : savedList.add(widget);
+                if (!saved) {
+                  savedList.add(widget);
+                  jeux.contains(widget) ? savedJeux.add(widget) : null;
+                  films.contains(widget) ? savedFilms.add(widget) : null;
+                  reseaux.contains(widget) ? savedReseau.add(widget) : null;
+                } else {
+                  savedList.remove(widget);
+                  savedJeux.remove(widget);
+                  savedFilms.remove(widget);
+                  savedReseau.remove(widget);
+                }
               });
             },
           ),
@@ -270,10 +298,17 @@ class _MediaTileState extends State<MediaTile> {
 
 //=================Pour la page favoris========================
 
-var favorisPage = ListView(
-  children: savedList,
-  padding: const EdgeInsets.symmetric(horizontal: 8),
-);
+final savedList = <MediaTile>[];
+final savedJeux = <MediaTile>[];
+final savedFilms = <MediaTile>[];
+final savedReseau = <MediaTile>[];
+
+var favorisPage = TabBarView(children: [
+  MediaView(mediaTileList: savedList),
+  MediaView(mediaTileList: savedJeux),
+  MediaView(mediaTileList: savedFilms),
+  MediaView(mediaTileList: savedReseau),
+]);
 
 //=================Pour la page d'information==================
 
@@ -284,7 +319,7 @@ final aboutPage = Card(
       children: const [
         Text("AGM", textScaleFactor: 4),
         Text("Créer par : Nilavan DEVA"),
-        Text("Version : 2.1"),
+        Text("Version : 2.2"),
       ],
       mainAxisAlignment: MainAxisAlignment.center,
     ),
